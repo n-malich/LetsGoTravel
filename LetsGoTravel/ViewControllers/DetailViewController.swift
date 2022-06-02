@@ -141,13 +141,13 @@ class DetailViewController: UIViewController {
         self.departureCityLabel.text = "\(flight.startCity),"
         self.departureCityCodeLabel.text = (flight.startCityCode).uppercased()
         let departureDate = DateManager.shared.getDateFromString(dateString: flight.startDate)
-        let departureString = DateManager.shared.getStringFromDate(date: departureDate ?? Date(), dateFormat: "Дата вылета: dd.MM.yyyy \n \nВремя отправления: HH:mm")
+        let departureString = DateManager.shared.getStringFromDate(date: departureDate ?? Date(), dateFormat: "Дата вылета: \n\ndd.MM.yyyy  в   HH:mm")
         self.departureDateLabel.text = departureString
         
         self.arrivalCityLabel.text = "\(flight.endCity),"
         self.arrivalCityCodeLabel.text = (flight.endCityCode).uppercased()
         let arrivalDate = DateManager.shared.getDateFromString(dateString: flight.endDate)
-        let arrivalString = DateManager.shared.getStringFromDate(date: arrivalDate ?? Date(), dateFormat: "Дата вылета: dd.MM.yyyy \n \nВремя отправления: HH:mm")
+        let arrivalString = DateManager.shared.getStringFromDate(date: arrivalDate ?? Date(), dateFormat: "Дата прибытия: \n\ndd.MM.yyyy  в   HH:mm")
         self.returnDateLabel.text = arrivalString
         
         self.searchTokenFlights = flight.searchToken
@@ -176,9 +176,9 @@ extension DetailViewController {
             favoriteView.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: -22),
             favoriteView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             
-            verticalLineImage.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 25),
-            verticalLineImage.heightAnchor.constraint(equalTo: wrapperView.heightAnchor, multiplier: 0.4),
-            verticalLineImage.widthAnchor.constraint(equalToConstant: 60),
+            verticalLineImage.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 40),
+            verticalLineImage.heightAnchor.constraint(equalTo: wrapperView.heightAnchor, multiplier: 0.3),
+            verticalLineImage.widthAnchor.constraint(equalToConstant: 50),
             verticalLineImage.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor),
             
             airplaneTakeOffImage.bottomAnchor.constraint(equalTo: verticalLineImage.topAnchor),
