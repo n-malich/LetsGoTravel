@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		766DC9F628469587000B01D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DC9F528469587000B01D6 /* AppDelegate.swift */; };
 		766DC9F828469587000B01D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DC9F728469587000B01D6 /* SceneDelegate.swift */; };
-		766DC9FA28469587000B01D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DC9F928469587000B01D6 /* ViewController.swift */; };
-		766DC9FD28469587000B01D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766DC9FB28469587000B01D6 /* Main.storyboard */; };
 		766DC9FF28469587000B01D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 766DC9FE28469587000B01D6 /* Assets.xcassets */; };
 		766DCA0228469587000B01D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766DCA0028469587000B01D6 /* LaunchScreen.storyboard */; };
+		766DCA0A28469672000B01D6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA0928469672000B01D6 /* AppCoordinator.swift */; };
+		766DCA0C28469735000B01D6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA0B28469735000B01D6 /* HomeCoordinator.swift */; };
+		766DCA0E284698EA000B01D6 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA0D284698EA000B01D6 /* DetailCoordinator.swift */; };
+		766DCA102846991A000B01D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA0F2846991A000B01D6 /* HomeViewController.swift */; };
+		766DCA1228469952000B01D6 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1128469952000B01D6 /* FlightTableViewCell.swift */; };
+		766DCA1428469A3B000B01D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1328469A3B000B01D6 /* DetailViewController.swift */; };
+		766DCA1628469A75000B01D6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1528469A75000B01D6 /* Extensions.swift */; };
+		766DCA1B2846CEBD000B01D6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1A2846CEBD000B01D6 /* NetworkService.swift */; };
+		766DCA1D2846D00B000B01D6 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1C2846D00B000B01D6 /* Flight.swift */; };
+		766DCA1F2847E72B000B01D6 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA1E2847E72B000B01D6 /* FavoriteView.swift */; };
+		766DCA24284806B6000B01D6 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA23284806B6000B01D6 /* FavoriteManager.swift */; };
+		766DCA282848CE14000B01D6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DCA272848CE14000B01D6 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		766DC9F228469587000B01D6 /* LetsGoTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsGoTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766DC9F528469587000B01D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		766DC9F728469587000B01D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		766DC9F928469587000B01D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		766DC9FC28469587000B01D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		766DC9FE28469587000B01D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766DCA0128469587000B01D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		766DCA0328469587000B01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		766DCA0928469672000B01D6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		766DCA0B28469735000B01D6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		766DCA0D284698EA000B01D6 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		766DCA0F2846991A000B01D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		766DCA1128469952000B01D6 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		766DCA1328469A3B000B01D6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		766DCA1528469A75000B01D6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		766DCA1A2846CEBD000B01D6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		766DCA1C2846D00B000B01D6 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		766DCA1E2847E72B000B01D6 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		766DCA23284806B6000B01D6 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		766DCA272848CE14000B01D6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,81 @@
 		766DC9F428469587000B01D6 /* LetsGoTravel */ = {
 			isa = PBXGroup;
 			children = (
-				766DC9F528469587000B01D6 /* AppDelegate.swift */,
-				766DC9F728469587000B01D6 /* SceneDelegate.swift */,
-				766DC9F928469587000B01D6 /* ViewController.swift */,
-				766DC9FB28469587000B01D6 /* Main.storyboard */,
+				766DCA222848067E000B01D6 /* NetworkService */,
+				766DCA1728469EBE000B01D6 /* Coordinators */,
+				766DCA2928491D23000B01D6 /* Managers */,
+				766DCA1828469EEC000B01D6 /* ViewControllers */,
+				766DCA202847EBA0000B01D6 /* Views */,
+				766DCA1928469F0D000B01D6 /* Cells */,
+				766DCA212847EBC8000B01D6 /* Extensions */,
 				766DC9FE28469587000B01D6 /* Assets.xcassets */,
+				766DC9F728469587000B01D6 /* SceneDelegate.swift */,
+				766DC9F528469587000B01D6 /* AppDelegate.swift */,
 				766DCA0028469587000B01D6 /* LaunchScreen.storyboard */,
 				766DCA0328469587000B01D6 /* Info.plist */,
 			);
 			path = LetsGoTravel;
+			sourceTree = "<group>";
+		};
+		766DCA1728469EBE000B01D6 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA0928469672000B01D6 /* AppCoordinator.swift */,
+				766DCA0B28469735000B01D6 /* HomeCoordinator.swift */,
+				766DCA0D284698EA000B01D6 /* DetailCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		766DCA1828469EEC000B01D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA0F2846991A000B01D6 /* HomeViewController.swift */,
+				766DCA1328469A3B000B01D6 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		766DCA1928469F0D000B01D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA1128469952000B01D6 /* FlightTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		766DCA202847EBA0000B01D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA1E2847E72B000B01D6 /* FavoriteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		766DCA212847EBC8000B01D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA1528469A75000B01D6 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		766DCA222848067E000B01D6 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA1A2846CEBD000B01D6 /* NetworkService.swift */,
+				766DCA1C2846D00B000B01D6 /* Flight.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		766DCA2928491D23000B01D6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				766DCA272848CE14000B01D6 /* DateManager.swift */,
+				766DCA23284806B6000B01D6 /* FavoriteManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +169,8 @@
 			dependencies = (
 			);
 			name = LetsGoTravel;
+			packageProductDependencies = (
+			);
 			productName = LetsGoTravel;
 			productReference = 766DC9F228469587000B01D6 /* LetsGoTravel.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +199,8 @@
 				Base,
 			);
 			mainGroup = 766DC9E928469587000B01D6;
+			packageReferences = (
+			);
 			productRefGroup = 766DC9F328469587000B01D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +217,6 @@
 			files = (
 				766DCA0228469587000B01D6 /* LaunchScreen.storyboard in Resources */,
 				766DC9FF28469587000B01D6 /* Assets.xcassets in Resources */,
-				766DC9FD28469587000B01D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +227,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				766DC9FA28469587000B01D6 /* ViewController.swift in Sources */,
+				766DCA1B2846CEBD000B01D6 /* NetworkService.swift in Sources */,
+				766DCA0A28469672000B01D6 /* AppCoordinator.swift in Sources */,
+				766DCA24284806B6000B01D6 /* FavoriteManager.swift in Sources */,
+				766DCA0C28469735000B01D6 /* HomeCoordinator.swift in Sources */,
 				766DC9F628469587000B01D6 /* AppDelegate.swift in Sources */,
+				766DCA1F2847E72B000B01D6 /* FavoriteView.swift in Sources */,
+				766DCA282848CE14000B01D6 /* DateManager.swift in Sources */,
 				766DC9F828469587000B01D6 /* SceneDelegate.swift in Sources */,
+				766DCA1628469A75000B01D6 /* Extensions.swift in Sources */,
+				766DCA102846991A000B01D6 /* HomeViewController.swift in Sources */,
+				766DCA1428469A3B000B01D6 /* DetailViewController.swift in Sources */,
+				766DCA0E284698EA000B01D6 /* DetailCoordinator.swift in Sources */,
+				766DCA1D2846D00B000B01D6 /* Flight.swift in Sources */,
+				766DCA1228469952000B01D6 /* FlightTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		766DC9FB28469587000B01D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				766DC9FC28469587000B01D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		766DCA0028469587000B01D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +383,8 @@
 				INFOPLIST_FILE = LetsGoTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,7 +396,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,7 +411,8 @@
 				INFOPLIST_FILE = LetsGoTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,7 +424,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

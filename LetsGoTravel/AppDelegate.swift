@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  LetsGoTravel
 //
-//  Created by Natali Malich on 31.05.2022.
+//  Created by Natali Malich
 //
 
 import UIKit
