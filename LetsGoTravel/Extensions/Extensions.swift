@@ -40,9 +40,9 @@ enum AssetsSymbol {
     case arrowRightArrowLeft
     case bookmark
     case bookmarkFill
-    case airplaneLanding
-    case airplaneTakeOff
-    case verticalLine
+    case airplaneTakeOffLeft
+    case airplaneTakeOffRight
+    case horizontalline
 }
 
 extension UIImage {
@@ -54,12 +54,12 @@ extension UIImage {
             return UIImage(systemName: "bookmark")
         case .bookmarkFill:
             return UIImage(systemName: "bookmark.fill")
-        case .airplaneLanding:
-            return UIImage(named: "airplane.landing", in: .main, compatibleWith: .current)
-        case .airplaneTakeOff:
-            return UIImage(named: "airplane.take.off", in: .main, compatibleWith: .current)
-        case .verticalLine:
-            return UIImage(named: "vertical.line", in: .main, compatibleWith: .current)
+        case .airplaneTakeOffLeft:
+            return UIImage(named: "airplane.take.off.left", in: .main, compatibleWith: .current)
+        case .airplaneTakeOffRight:
+            return UIImage(named: "airplane.take.off.right", in: .main, compatibleWith: .current)
+        case .horizontalline:
+            return UIImage(named: "horizontal.line", in: .main, compatibleWith: .current)
         }
     }
 }

@@ -24,22 +24,13 @@ class DetailViewController: UIViewController {
     // MARK: - UI Elements
     private lazy var wrapperView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.appColor(.blueLight)
+        view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.activateAnchors()
         return view
     }()
     
     private lazy var departureCityLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.activateAnchors()
-        return label
-    }()
-    
-    private lazy var departureCityCodeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25)
         label.textColor = .black
@@ -58,14 +49,6 @@ class DetailViewController: UIViewController {
     }()
     
     private lazy var arrivalCityLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.textColor = .black
-        label.activateAnchors()
-        return label
-    }()
-    
-    private lazy var arrivalCityCodeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25)
         label.textColor = .black
@@ -93,24 +76,24 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private lazy var verticalLineImage: UIImageView = {
+    private lazy var horizontalLineImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage.appSymbol(.verticalLine)
+        image.image = UIImage.appSymbol(.horizontalline)
         image.activateAnchors()
         return image
     }()
     
-    private lazy var airplaneTakeOffImage: UIImageView = {
+    private lazy var airplaneTakeOffRightImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage.appSymbol(.airplaneTakeOff)?.withRenderingMode(.alwaysTemplate)
+        image.image = UIImage.appSymbol(.airplaneTakeOffRight)?.withRenderingMode(.alwaysTemplate)
         image.tintColor = UIColor.appColor(.blueDark)
         image.activateAnchors()
         return image
     }()
     
-    private lazy var airplaneLandingImage: UIImageView = {
+    private lazy var airplaneTakeOffLeftImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage.appSymbol(.airplaneLanding)?.withRenderingMode(.alwaysTemplate)
+        image.image = UIImage.appSymbol(.airplaneTakeOffLeft)?.withRenderingMode(.alwaysTemplate)
         image.tintColor = UIColor.appColor(.blueDark)
         image.activateAnchors()
         return image
@@ -136,18 +119,16 @@ class DetailViewController: UIViewController {
     
     // MARK: - Data
     func showFlight(flight: Flight) {
-        self.priceLabel.text = "Цена за 1 пассажира \n \(flight.price) ₽"
+        self.priceLabel.text = "Цена за 1 пассажира \n\(flight.price) ₽"
         
-        self.departureCityLabel.text = "\(flight.startCity),"
-        self.departureCityCodeLabel.text = (flight.startCityCode).uppercased()
+        self.departureCityLabel.text = "\(flight.startCity) - \(flight.endCity)"
         let departureDate = DateManager.shared.getDateFromString(dateString: flight.startDate)
-        let departureString = DateManager.shared.getStringFromDate(date: departureDate ?? Date(), dateFormat: "Дата вылета: \n\ndd.MM.yyyy  в   HH:mm")
+        let departureString = DateManager.shared.getStringFromDate(date: departureDate ?? Date(), dateFormat: "Дата отправления: dd.MM.yyyy \n\nВремя вылета: HH:mm")
         self.departureDateLabel.text = departureString
         
-        self.arrivalCityLabel.text = "\(flight.endCity),"
-        self.arrivalCityCodeLabel.text = (flight.endCityCode).uppercased()
+        self.arrivalCityLabel.text = "\(flight.endCity) - \(flight.startCity)"
         let arrivalDate = DateManager.shared.getDateFromString(dateString: flight.endDate)
-        let arrivalString = DateManager.shared.getStringFromDate(date: arrivalDate ?? Date(), dateFormat: "Дата прибытия: \n\ndd.MM.yyyy  в   HH:mm")
+        let arrivalString = DateManager.shared.getStringFromDate(date: arrivalDate ?? Date(), dateFormat: "Дата отправления: dd.MM.yyyy \n\nВремя вылета: HH:mm")
         self.returnDateLabel.text = arrivalString
         
         self.searchTokenFlights = flight.searchToken
@@ -157,8 +138,9 @@ class DetailViewController: UIViewController {
     // MARK: - Setup Views
 extension DetailViewController {
     private func setupViews() {
+        view.backgroundColor = UIColor.appColor(.blueLight)
         view.addSubview(wrapperView)
-        wrapperView.addSubviews(departureCityLabel, departureCityCodeLabel, arrivalCityLabel, arrivalCityCodeLabel, departureDateLabel, returnDateLabel, priceLabel, airplaneTakeOffImage, airplaneLandingImage, verticalLineImage, favoriteView)
+        wrapperView.addSubviews(departureCityLabel, arrivalCityLabel, departureDateLabel, returnDateLabel, priceLabel, airplaneTakeOffRightImage, airplaneTakeOffLeftImage, horizontalLineImage, favoriteView)
     }
 }
 
@@ -172,41 +154,33 @@ extension DetailViewController {
             wrapperView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             wrapperView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            
             favoriteView.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: -22),
             favoriteView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             
-            verticalLineImage.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 40),
-            verticalLineImage.heightAnchor.constraint(equalTo: wrapperView.heightAnchor, multiplier: 0.3),
-            verticalLineImage.widthAnchor.constraint(equalToConstant: 50),
-            verticalLineImage.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor),
-            
-            airplaneTakeOffImage.bottomAnchor.constraint(equalTo: verticalLineImage.topAnchor),
-            airplaneTakeOffImage.centerXAnchor.constraint(equalTo: verticalLineImage.centerXAnchor),
-            
-            airplaneLandingImage.topAnchor.constraint(equalTo: verticalLineImage.bottomAnchor),
-            airplaneLandingImage.centerXAnchor.constraint(equalTo: verticalLineImage.centerXAnchor),
-            
-            departureCityLabel.bottomAnchor.constraint(equalTo: airplaneTakeOffImage.topAnchor),
-            departureCityLabel.leadingAnchor.constraint(equalTo: airplaneTakeOffImage.trailingAnchor, constant: 20),
-            
-            departureCityCodeLabel.leadingAnchor.constraint(equalTo: departureCityLabel.trailingAnchor, constant: 3),
-            departureCityCodeLabel.bottomAnchor.constraint(equalTo: departureCityLabel.bottomAnchor),
-            
-            departureDateLabel.topAnchor.constraint(equalTo: departureCityLabel.bottomAnchor, constant: 20),
-            departureDateLabel.leadingAnchor.constraint(equalTo: departureCityLabel.leadingAnchor),
-
-            returnDateLabel.topAnchor.constraint(equalTo: airplaneLandingImage.bottomAnchor),
-            returnDateLabel.leadingAnchor.constraint(equalTo: airplaneLandingImage.trailingAnchor, constant: 20),
-            
-            arrivalCityLabel.bottomAnchor.constraint(equalTo: returnDateLabel.topAnchor, constant: -20),
-            arrivalCityLabel.leadingAnchor.constraint(equalTo: returnDateLabel.leadingAnchor),
-            
-            arrivalCityCodeLabel.leadingAnchor.constraint(equalTo: arrivalCityLabel.trailingAnchor, constant: 3),
-            arrivalCityCodeLabel.bottomAnchor.constraint(equalTo: arrivalCityLabel.bottomAnchor),
-            
             priceLabel.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: 10),
-            priceLabel.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor)
+            priceLabel.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor),
+            
+            horizontalLineImage.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor),
+            horizontalLineImage.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor),
+            horizontalLineImage.widthAnchor.constraint(equalTo: wrapperView.widthAnchor, multiplier: 0.4),
+            
+            departureDateLabel.bottomAnchor.constraint(equalTo: horizontalLineImage.topAnchor, constant: -30),
+            departureDateLabel.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 100),
+            
+            departureCityLabel.bottomAnchor.constraint(equalTo: departureDateLabel.topAnchor, constant: -20),
+            departureCityLabel.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor),
+            
+            arrivalCityLabel.topAnchor.constraint(equalTo: horizontalLineImage.bottomAnchor, constant: 30),
+            arrivalCityLabel.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor),
+            
+            returnDateLabel.topAnchor.constraint(equalTo: arrivalCityLabel.bottomAnchor, constant: 20),
+            returnDateLabel.leadingAnchor.constraint(equalTo: departureDateLabel.leadingAnchor),
+            
+            airplaneTakeOffRightImage.trailingAnchor.constraint(equalTo: departureDateLabel.leadingAnchor, constant: -20),
+            airplaneTakeOffRightImage.centerYAnchor.constraint(equalTo: departureDateLabel.centerYAnchor),
+
+            airplaneTakeOffLeftImage.trailingAnchor.constraint(equalTo: returnDateLabel.leadingAnchor, constant: -20),
+            airplaneTakeOffLeftImage.centerYAnchor.constraint(equalTo: returnDateLabel.centerYAnchor)
         ]
         .forEach {$0.isActive = true}
     }
